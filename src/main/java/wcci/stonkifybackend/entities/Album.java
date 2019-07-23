@@ -26,7 +26,6 @@ public class Album {
 	private Artist artist;
 
 	@OneToMany(mappedBy = "album")
-	@JsonBackReference
 	private Set<Song> songs = new HashSet<Song>();
 
 	protected Album()

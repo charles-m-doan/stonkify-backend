@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 @Entity
 public class Artist {
 
@@ -21,7 +19,6 @@ public class Artist {
 	private String imgUrl;
 
 	@OneToMany(mappedBy = "artist")
-	@JsonBackReference
 	private Set<Album> albums = new HashSet<Album>();
 
 	protected Artist()
