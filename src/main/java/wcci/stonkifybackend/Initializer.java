@@ -25,9 +25,9 @@ public class Initializer implements CommandLineRunner {
 	SongRepository songRepo;
 
 	@Override
-	public void run(String... args) throws Exception
-		{
+	public void run(String... args) throws Exception {
 		System.out.println("RUNNING INITIALIZER");
+
 		Artist artist01 = RandomEntityFactory.generateRandomArtist();
 		artistRepo.save(artist01);
 
@@ -69,5 +69,5 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(song11);
 		Song song12 = RandomEntityFactory.generateRandomSong(album03);
 		songRepo.save(song12);
-		}
+	}
 }

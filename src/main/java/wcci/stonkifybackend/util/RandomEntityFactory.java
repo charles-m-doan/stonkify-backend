@@ -13,7 +13,11 @@ public class RandomEntityFactory {
 
 	private static final Random RANDOM = new Random(System.nanoTime());
 	private static final Lorem LOREM = LoremIpsum.getInstance();
+	
+	private static final String ARTIST_IMG_URL = "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE1ODA0OTcxODMyODA0ODc3/frank-zappa-9540382-1-402.jpg";
 
+	private static final String ALBUM_IMG_URL = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Sheik_Yerbouti.jpeg/220px-Sheik_Yerbouti.jpeg";
+	
 	private RandomEntityFactory()
 		{
 		}
@@ -21,7 +25,8 @@ public class RandomEntityFactory {
 	public static Artist generateRandomArtist()
 		{
 		String name = LOREM.getName();
-		String imgUrl = LOREM.getUrl();
+//		String imgUrl = LOREM.getUrl();
+		String imgUrl = ARTIST_IMG_URL;
 		Artist artist = new Artist(name, imgUrl);
 		return artist;
 		}
@@ -38,7 +43,8 @@ public class RandomEntityFactory {
 	public static Album generateRandomAlbum(Artist artist)
 		{
 		String title = LOREM.getTitle(1 + RANDOM.nextInt(6));
-		String imgUrl = LOREM.getUrl();
+//		String imgUrl = LOREM.getUrl();
+		String imgUrl = ALBUM_IMG_URL;
 		Album album = new Album(title, imgUrl, artist);
 		return album;
 		}
