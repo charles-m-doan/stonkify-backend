@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Album {
@@ -21,10 +22,16 @@ public class Album {
 	private String title;
 	private String imgUrl;
 
+	private Long parentId;
+	private String parentName;
+
+	private int publishYear;
+
 	@ManyToOne
 	@JsonBackReference
 	private Artist artist;
 
+	@JsonManagedReference
 	@OneToMany(mappedBy = "album")
 	private Set<Song> songs = new HashSet<Song>();
 
@@ -32,11 +39,24 @@ public class Album {
 		{
 		}
 
+	public Album(String title, String imgUrl, Artist artist, int publishYear)
+		{
+		this.title = title;
+		this.imgUrl = imgUrl;
+		this.artist = artist;
+		this.parentId = artist.getId();
+		this.parentName = artist.getName();
+		this.publishYear = publishYear;
+		}
+
 	public Album(String title, String imgUrl, Artist artist)
 		{
 		this.title = title;
 		this.imgUrl = imgUrl;
 		this.artist = artist;
+		this.parentId = artist.getId();
+		this.parentName = artist.getName();
+		this.publishYear = 0;
 		}
 
 	public Album(String title, Artist artist)
@@ -44,6 +64,9 @@ public class Album {
 		this.title = title;
 		this.imgUrl = "defaultImg.png";
 		this.artist = artist;
+		this.parentId = artist.getId();
+		this.parentName = artist.getName();
+		this.publishYear = 0;
 		}
 
 	public void addSong(Song song)
@@ -79,6 +102,21 @@ public class Album {
 	public String getImgUrl()
 		{
 		return imgUrl;
+		}
+
+	public Long getParentId()
+		{
+		return parentId;
+		}
+
+	public String getParentName()
+		{
+		return parentName;
+		}
+
+	public int getPublishYear()
+		{
+		return publishYear;
 		}
 
 	public void setArtist(Artist artist)

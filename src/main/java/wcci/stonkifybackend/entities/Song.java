@@ -18,6 +18,9 @@ public class Song {
 	private String linkUrl;
 	private String duration;
 
+	private Long parentAlbumId;
+	private Long parentArtistId;
+
 	@ManyToOne
 	@JsonBackReference
 	private Album album;
@@ -32,6 +35,8 @@ public class Song {
 		this.linkUrl = linkUrl;
 		this.duration = duration;
 		this.album = album;
+		this.parentAlbumId = album.getId();
+		this.parentArtistId = album.getParentId();
 		}
 
 	public Song(String title, Album album)
@@ -40,6 +45,8 @@ public class Song {
 		this.linkUrl = "defaultLink.com";
 		this.duration = "00:00";
 		this.album = album;
+		this.parentAlbumId = album.getId();
+		this.parentArtistId = album.getParentId();
 		}
 
 	public String toString()
@@ -70,6 +77,16 @@ public class Song {
 	public Album getAlbum()
 		{
 		return album;
+		}
+
+	public Long getParentAlbumId()
+		{
+		return parentAlbumId;
+		}
+
+	public Long getParentArtistId()
+		{
+		return parentArtistId;
 		}
 
 	@Override
