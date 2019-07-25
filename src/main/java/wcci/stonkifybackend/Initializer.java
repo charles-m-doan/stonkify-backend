@@ -69,5 +69,16 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(song11);
 		Song song12 = RandomEntityFactory.generateRandomSong(album03);
 		songRepo.save(song12);
+
+		populateKaisEntities();
+		populateIsaacsEntities();
+	}
+
+	private void populateKaisEntities() {
+
+	}
+
+	private void populateIsaacsEntities() {
+
 	}
 }
