@@ -26,34 +26,32 @@ public class Initializer implements CommandLineRunner {
 	SongRepository songRepo;
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) throws Exception
+		{
 		System.out.println("RUNNING INITIALIZER");
 
 		populateKaisEntities();
 		populateIsaacsEntities();
-	}
+		populateCharlesEntities();
+		}
 
-	private void populateKaisEntities() {
-		Artist frank = new Artist("Frank Zappa",
-				"https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE1ODA0OTcxODMyODA0ODc3/frank-zappa-9540382-1-402.jpg");
+	private void populateKaisEntities()
+		{
+		Artist frank = new Artist("Frank Zappa", "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE1ODA0OTcxODMyODA0ODc3/frank-zappa-9540382-1-402.jpg");
 		artistRepo.save(frank);
-		Album sheik = new Album("Sheik Yerbouti",
-				"https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Sheik_Yerbouti.jpeg/220px-Sheik_Yerbouti.jpeg",
-				frank, 1979);
+		Album sheik = new Album("Sheik Yerbouti", "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Sheik_Yerbouti.jpeg/220px-Sheik_Yerbouti.jpeg", frank, 1979);
 		albumRepo.save(sheik);
 		Song sheik1 = new Song("I Have Been In You", "https://www.youtube.com/embed/2NOFTbbJ3vA", "3:33", sheik);
 		songRepo.save(sheik1);
 		Song sheik2 = new Song("Flakes", "https://www.youtube.com/embed/AgyeUHH_V0g", "6:48", sheik);
 		songRepo.save(sheik2);
-		Song sheik3 = new Song("Broken hearts are for ARSEHOLES", "https://www.youtube.com/embed/xE5iI0QM6qY", "3:43",
-				sheik);
+		Song sheik3 = new Song("Broken hearts are for ARSEHOLES", "https://www.youtube.com/embed/xE5iI0QM6qY", "3:43", sheik);
 		songRepo.save(sheik3);
 		Song sheik4 = new Song("I'm So Cute", "https://www.youtube.com/embed/D9sIKDt7Fso", "4:24", sheik);
 		songRepo.save(sheik4);
 		Song sheik5 = new Song("Jones Crusher", "https://www.youtube.com/embed/CCzkug4sJGQ", "2:59", sheik);
 		songRepo.save(sheik5);
-		Song sheik6 = new Song("What Ever Happened To All The Fun In The World",
-				"https://www.youtube.com/embed/BuVz4f94uBg", "0:35", sheik);
+		Song sheik6 = new Song("What Ever Happened To All The Fun In The World", "https://www.youtube.com/embed/BuVz4f94uBg", "0:35", sheik);
 		songRepo.save(sheik6);
 		Song sheik7 = new Song("Rat Tomago", "https://www.youtube.com/embed/kKi0-SKA92g", "5:18", sheik);
 		songRepo.save(sheik7);
@@ -77,9 +75,7 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(sheik16);
 		Song sheik17 = new Song("Yo Mama", "https://www.youtube.com/embed/sXy6FYNwHrI", "12:43", sheik);
 		songRepo.save(sheik17);
-		Album rats = new Album("Hot Rats",
-				"https://upload.wikimedia.org/wikipedia/en/9/9b/Hot_Rats_%28Frank_Zappa_album_-_cover_art%29.jpg",
-				frank, 1969);
+		Album rats = new Album("Hot Rats", "https://upload.wikimedia.org/wikipedia/en/9/9b/Hot_Rats_%28Frank_Zappa_album_-_cover_art%29.jpg", frank, 1969);
 		albumRepo.save(rats);
 		Song rats1 = new Song("Peaches en Regalia", "https://www.youtube.com/embed/BSb_YW3p8CY", "3:36", rats);
 		songRepo.save(rats1);
@@ -94,15 +90,11 @@ public class Initializer implements CommandLineRunner {
 		Song rats6 = new Song("It Must Be A Camel", "https://www.youtube.com/embed/VlM1JQN6_yc", "5:18", rats);
 		songRepo.save(rats6);
 
-		Artist king = new Artist("King Crimson",
-				"http://www.progarchives.com/progressive_rock_discography_band/191.JPG");
+		Artist king = new Artist("King Crimson", "http://www.progarchives.com/progressive_rock_discography_band/191.JPG");
 		artistRepo.save(king);
-		Album court = new Album("In the Court of the Crimson King",
-				"https://upload.wikimedia.org/wikipedia/en/8/84/In_the_Court_of_the_Crimson_King_-_40th_Anniversary_Box_Set_-_Front_cover.jpeg",
-				king, 1969);
+		Album court = new Album("In the Court of the Crimson King", "https://upload.wikimedia.org/wikipedia/en/8/84/In_the_Court_of_the_Crimson_King_-_40th_Anniversary_Box_Set_-_Front_cover.jpeg", king, 1969);
 		albumRepo.save(court);
-		Song court1 = new Song("21st Century Schizoid Man", "https://www.youtube.com/embed/3028oDEKZo4", "10:57",
-				court);
+		Song court1 = new Song("21st Century Schizoid Man", "https://www.youtube.com/embed/3028oDEKZo4", "10:57", court);
 		songRepo.save(court1);
 		Song court2 = new Song("I Talk To The Wind", "https://www.youtube.com/embed/no8L51U_KlM", "5:21", court);
 		songRepo.save(court2);
@@ -110,11 +102,9 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(court3);
 		Song court4 = new Song("Moonchild", "https://www.youtube.com/embed/-NjdfOoPK9c", "2:30", court);
 		songRepo.save(court4);
-		Song court5 = new Song("The Court of the Crimson Kink", "https://www.youtube.com/embed/gvCmtHDDuu0", "7:15",
-				court);
+		Song court5 = new Song("The Court of the Crimson Kink", "https://www.youtube.com/embed/gvCmtHDDuu0", "7:15", court);
 		songRepo.save(court5);
-		Album red = new Album("Red", "https://upload.wikimedia.org/wikipedia/en/6/6c/Red%2C_King_Crimson.jpg", king,
-				1974);
+		Album red = new Album("Red", "https://upload.wikimedia.org/wikipedia/en/6/6c/Red%2C_King_Crimson.jpg", king, 1974);
 		albumRepo.save(red);
 		Song red1 = new Song("Red", "https://www.youtube.com/embed/X_pDwv3tpug", "6:31", red);
 		songRepo.save(red1);
@@ -127,11 +117,9 @@ public class Initializer implements CommandLineRunner {
 		Song red5 = new Song("Starless", "https://www.youtube.com/embed/OfR6_V91fG8", "12:30", red);
 		songRepo.save(red5);
 
-		Artist miles = new Artist("Miles Davis",
-				"https://img.discogs.com/saz25T9xJgOthJLeH0-lQg7jk34=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-23755-1394387343-4500.jpeg.jpg");
+		Artist miles = new Artist("Miles Davis", "https://img.discogs.com/saz25T9xJgOthJLeH0-lQg7jk34=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-23755-1394387343-4500.jpeg.jpg");
 		artistRepo.save(miles);
-		Album blue = new Album("Kind of Blue",
-				"https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg", miles, 1959);
+		Album blue = new Album("Kind of Blue", "https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg", miles, 1959);
 		albumRepo.save(blue);
 		Song blue1 = new Song("So What", "https://www.youtube.com/embed/ylXk1LBvIqU", "9:23", blue);
 		songRepo.save(blue1);
@@ -143,8 +131,7 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(blue4);
 		Song blue5 = new Song("Flamenco Sketches", "https://www.youtube.com/embed/nTwp1sgUJrM", "9:27", blue);
 		songRepo.save(blue5);
-		Album brew = new Album("Bitches Brew", "https://upload.wikimedia.org/wikipedia/en/7/72/Bitches_brew.jpg", miles,
-				1970);
+		Album brew = new Album("Bitches Brew", "https://upload.wikimedia.org/wikipedia/en/7/72/Bitches_brew.jpg", miles, 1970);
 		albumRepo.save(brew);
 		Song brew1 = new Song("Pharaoh's Dance", "https://www.youtube.com/embed/ycSAGSO1AI0", "20:06", brew);
 		songRepo.save(brew1);
@@ -191,7 +178,7 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(twentyOneTwelve5);
 		Song twentyOneTwelve6 = new Song("Something For Nothing", "https://www.youtube.com/embed/D-k8zBWLQFM", "3:57", twentyOneTwelve);
 		songRepo.save(twentyOneTwelve6);
-		
+
 		Artist herbie = new Artist("Herbie Hancock", "https://www.abc.net.au/news/image/11050610-3x2-940x627.jpg");
 		artistRepo.save(herbie);
 		Album headHunters = new Album("Head Hunters", "https://upload.wikimedia.org/wikipedia/en/a/aa/Head_Hunters_Album.jpg", herbie, 1973);
@@ -205,7 +192,7 @@ public class Initializer implements CommandLineRunner {
 		Song headHunters4 = new Song("Vein Melter", "https://www.youtube.com/embed/mZy7v_-ss74", "9:10", headHunters);
 		songRepo.save(headHunters4);
 		Album maiden = new Album("Maiden Voyage", "https://upload.wikimedia.org/wikipedia/en/7/7a/Maiden_Voyage_%28Hancock%29.jpg", herbie, 1965);
-		albumRepo.save(maiden);		
+		albumRepo.save(maiden);
 		Song maiden1 = new Song("Maiden Voyage", "https://www.youtube.com/embed/hwmRQ0PBtXU", "7:57", maiden);
 		songRepo.save(maiden1);
 		Song maiden2 = new Song("The Eye of the Hurricane", "https://www.youtube.com/embed/oQ9V22hnYyQ", "6:01", maiden);
@@ -216,12 +203,11 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(maiden4);
 		Song maiden5 = new Song("Dolphin Dance", "https://www.youtube.com/embed/iB2Z2DY17yQ", "9:16", maiden);
 		songRepo.save(maiden5);
+		}
 
-	}
-
-	private void populateIsaacsEntities() {
-		
-		Artist modestMouse = new Artist("Modest Mouse","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Modest_Mouse_UPT.jpg/267px-Modest_Mouse_UPT.jpg");
+	private void populateIsaacsEntities()
+		{
+		Artist modestMouse = new Artist("Modest Mouse", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Modest_Mouse_UPT.jpg/267px-Modest_Mouse_UPT.jpg");
 		artistRepo.save(modestMouse);
 		Artist arcadeFire = new Artist("Arcade Fire", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Arcade_Fire_Live_in_Concert_%2819804231713%29.jpg/300px-Arcade_Fire_Live_in_Concert_%2819804231713%29.jpg");
 		artistRepo.save(arcadeFire);
@@ -229,9 +215,9 @@ public class Initializer implements CommandLineRunner {
 		artistRepo.save(theAntlers);
 		Artist beachHouse = new Artist("Beach House", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg/300px-Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg");
 		artistRepo.save(beachHouse);
-		Artist theNational = new Artist("The National","https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/The_National_at_Brooklyn_Academy_of_Music.jpg/220px-The_National_at_Brooklyn_Academy_of_Music.jpg");
+		Artist theNational = new Artist("The National", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/The_National_at_Brooklyn_Academy_of_Music.jpg/220px-The_National_at_Brooklyn_Academy_of_Music.jpg");
 		artistRepo.save(theNational);
-		
+
 		Album highViolet = new Album("High Violet", "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Highviolet.jpg/220px-Highviolet.jpg", theNational, 2010);
 		albumRepo.save(highViolet);
 		Album boxer = new Album("Boxer", "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/TheNational-Boxer.jpg/220px-TheNational-Boxer.jpg", theNational, 2007);
@@ -244,7 +230,6 @@ public class Initializer implements CommandLineRunner {
 		albumRepo.save(hospice);
 		Album devotion = new Album("Devotion", "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/BeachHouseDevotion.jpg/220px-BeachHouseDevotion.jpg", beachHouse, 2008);
 		albumRepo.save(devotion);
-		
 
 		theNational.addAlbum(boxer);
 		theNational.addAlbum(highViolet);
@@ -252,242 +237,310 @@ public class Initializer implements CommandLineRunner {
 		theAntlers.addAlbum(hospice);
 		modestMouse.addAlbum(noOnesFirst);
 		beachHouse.addAlbum(devotion);
-		
-		Song fakeEmpire= new Song("Fake Empire", "https://www.youtube.com/watch?v=YKYvAJBsoqY&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=1", "3:25", boxer);
+
+		Song fakeEmpire = new Song("Fake Empire", "https://www.youtube.com/watch?v=YKYvAJBsoqY&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=1", "3:25", boxer);
 		songRepo.save(fakeEmpire);
 		boxer.addSong(fakeEmpire);
-		
-		Song mistakenForSTrangers= new Song("Mistaken For Strangers", "https://www.youtube.com/watch?v=EIoUl3Kj7cw&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=2", "3:30", boxer);
+
+		Song mistakenForSTrangers = new Song("Mistaken For Strangers", "https://www.youtube.com/watch?v=EIoUl3Kj7cw&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=2", "3:30", boxer);
 		songRepo.save(mistakenForSTrangers);
 		boxer.addSong(mistakenForSTrangers);
-		
+
 		Song brainy = new Song("Brainy", "https://www.youtube.com/watch?v=CNXDAf_OgsE&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=3", "3:18", boxer);
 		songRepo.save(brainy);
 		boxer.addSong(brainy);
-		
+
 		Song squalorVictoria = new Song("Squalor, Victoria", "https://www.youtube.com/watch?v=L_sn90wEEIY&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=4", "2:59", boxer);
 		songRepo.save(squalorVictoria);
 		boxer.addSong(squalorVictoria);
-		
+
 		Song greenGloves = new Song("Green Gloves", "https://www.youtube.com/watch?v=eCeBxmMb-uw&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=5", "3:39", boxer);
 		songRepo.save(greenGloves);
 		boxer.addSong(greenGloves);
-		
-		Song slowShow= new Song("Slow Show", "https://www.youtube.com/watch?v=Aol6RMtEB8Y&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=6", "4:08", boxer);
+
+		Song slowShow = new Song("Slow Show", "https://www.youtube.com/watch?v=Aol6RMtEB8Y&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=6", "4:08", boxer);
 		songRepo.save(slowShow);
 		boxer.addSong(slowShow);
-		
+
 		Song apartmentStory = new Song("Apartment Story", "https://www.youtube.com/watch?v=UgBSKolU2BA&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=7", "3:32", boxer);
 		songRepo.save(apartmentStory);
 		boxer.addSong(apartmentStory);
-		
-		Song startAWar= new Song("Start A War", "https://www.youtube.com/watch?v=Q0eEbxpj0dc&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=8", "3:16", boxer);
+
+		Song startAWar = new Song("Start A War", "https://www.youtube.com/watch?v=Q0eEbxpj0dc&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=8", "3:16", boxer);
 		songRepo.save(startAWar);
 		boxer.addSong(startAWar);
-		
-		Song guestRoom= new Song("Guest Room", "https://www.youtube.com/watch?v=pqtdZBxTHjY&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=9", "3:18", boxer);
+
+		Song guestRoom = new Song("Guest Room", "https://www.youtube.com/watch?v=pqtdZBxTHjY&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=9", "3:18", boxer);
 		songRepo.save(guestRoom);
 		boxer.addSong(guestRoom);
-		
-		Song racingLikeAPro= new Song("Racing Like A Pro", "https://www.youtube.com/watch?v=gH1zpbJUPj0&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=10", "3:23", boxer);
+
+		Song racingLikeAPro = new Song("Racing Like A Pro", "https://www.youtube.com/watch?v=gH1zpbJUPj0&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=10", "3:23", boxer);
 		songRepo.save(racingLikeAPro);
 		boxer.addSong(racingLikeAPro);
-		
+
 		Song ada = new Song("Ada", "https://www.youtube.com/watch?v=-0oqiAgHziI&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=11", "4:03", boxer);
 		songRepo.save(ada);
 		boxer.addSong(ada);
-		
+
 		Song gospel = new Song("Gospel", "https://www.youtube.com/watch?v=iwFX1FEi-v0&list=PLhAkn8Z8cAtiKeYHgAG44h8uDp3TmsJs5&index=12", "4:29", boxer);
 		songRepo.save(gospel);
 		boxer.addSong(gospel);
-		
-		Song terribleLove= new Song("Terrible Love", "https://youtu.be/tHUmXL2EHx0", "3:25", highViolet);
+
+		Song terribleLove = new Song("Terrible Love", "https://youtu.be/tHUmXL2EHx0", "3:25", highViolet);
 		songRepo.save(terribleLove);
 		highViolet.addSong(terribleLove);
-		
-		Song sorrow= new Song("Sorrow", "https://youtu.be/fxWh5ivlBS0", "3:30", highViolet);
+
+		Song sorrow = new Song("Sorrow", "https://youtu.be/fxWh5ivlBS0", "3:30", highViolet);
 		songRepo.save(sorrow);
 		highViolet.addSong(sorrow);
-		
+
 		Song anyonesGhost = new Song("Anyones Ghost", "https://youtu.be/MSYAg6vbAqg", "3:18", highViolet);
 		songRepo.save(anyonesGhost);
 		highViolet.addSong(anyonesGhost);
-		
+
 		Song littleFaith = new Song("Little Faith", "https://youtu.be/dMcVCylxSnk", "2:59", highViolet);
 		songRepo.save(littleFaith);
 		highViolet.addSong(littleFaith);
-		
+
 		Song afraidOfEveryone = new Song("Afraid Of Everyone", "https://youtu.be/MBu-JKV4PF8", "3:39", highViolet);
 		songRepo.save(afraidOfEveryone);
 		highViolet.addSong(afraidOfEveryone);
-		
+
 		Song bloodbuzzOhio = new Song("Bloodbuzz Ohio", "https://youtu.be/MBu-JKV4PF8", "4:08", highViolet);
 		songRepo.save(bloodbuzzOhio);
 		highViolet.addSong(bloodbuzzOhio);
-		
+
 		Song lemonworld = new Song("Lemonworld", "https://youtu.be/5Vzw1VKWzlg", "3:32", highViolet);
 		songRepo.save(lemonworld);
 		highViolet.addSong(lemonworld);
-		
+
 		Song runaway = new Song("Runaway", "https://youtu.be/zN-VmYRyB6A", "3:16", highViolet);
 		songRepo.save(runaway);
 		highViolet.addSong(runaway);
-		
+
 		Song conversation16 = new Song("Converstion 16", "https://youtu.be/SnbXLCRIBe8", "3:18", highViolet);
 		songRepo.save(conversation16);
 		highViolet.addSong(conversation16);
-		
+
 		Song england = new Song("England", "https://youtu.be/xcEwEYrWo6Q", "3:23", highViolet);
 		songRepo.save(england);
 		highViolet.addSong(england);
-		
+
 		Song vanderlyleCrybabyGeeks = new Song("Vanderlyle Crybaby Geeks", "https://youtu.be/IgY3z5VSDBg", "4:03", highViolet);
 		songRepo.save(vanderlyleCrybabyGeeks);
 		highViolet.addSong(vanderlyleCrybabyGeeks);
-		
+
 		Song neighborhood1 = new Song("Neighborhood #1 (Tunnels)", "https://youtu.be/0b_IHjWXbuM", "3:25", funeral);
 		songRepo.save(neighborhood1);
 		funeral.addSong(neighborhood1);
-		
+
 		Song neighborhood2 = new Song("Neighborhood #2 (Laïka)", "https://youtu.be/OlRfZABWgK4", "3:30", funeral);
 		songRepo.save(neighborhood2);
 		funeral.addSong(neighborhood2);
-		
+
 		Song frenchSong = new Song("Une année sans lumière", "https://youtu.be/wHsvgIDn8Kg", "3:18", funeral);
 		songRepo.save(frenchSong);
 		funeral.addSong(frenchSong);
-		
+
 		Song neighborhood3 = new Song("Neighborhood #3 (Power Out)", "https://youtu.be/TA68f56yh80", "2:59", funeral);
 		songRepo.save(neighborhood3);
 		funeral.addSong(neighborhood3);
-		
+
 		Song neighborhood4 = new Song("Neighborhood #4 (7 Kettles)", "https://youtu.be/kBhlRY5LpZw", "3:39", funeral);
 		songRepo.save(neighborhood4);
 		funeral.addSong(neighborhood4);
-		
-		Song crownOfLove= new Song("Crown of Love", "https://youtu.be/kxkK06HlgqA", "4:08", funeral);
+
+		Song crownOfLove = new Song("Crown of Love", "https://youtu.be/kxkK06HlgqA", "4:08", funeral);
 		songRepo.save(crownOfLove);
 		funeral.addSong(crownOfLove);
-		
+
 		Song wakeUp = new Song("Wake Up", "https://youtu.be/yIE9UAZGry0", "3:32", funeral);
 		songRepo.save(wakeUp);
 		funeral.addSong(wakeUp);
-		
-		Song haiti= new Song("Haiti", "https://youtu.be/xwcaDvr8f1o", "3:16", funeral);
+
+		Song haiti = new Song("Haiti", "https://youtu.be/xwcaDvr8f1o", "3:16", funeral);
 		songRepo.save(haiti);
 		funeral.addSong(haiti);
-		
-		Song rebellion= new Song("Rebellion (lies)", "https://youtu.be/CICIfCbw1nU", "3:18", funeral);
+
+		Song rebellion = new Song("Rebellion (lies)", "https://youtu.be/CICIfCbw1nU", "3:18", funeral);
 		songRepo.save(rebellion);
 		funeral.addSong(rebellion);
 
-		Song backseat= new Song("In the Backseat", "https://youtu.be/SsmEMk2QOnM", "3:18", funeral);
+		Song backseat = new Song("In the Backseat", "https://youtu.be/SsmEMk2QOnM", "3:18", funeral);
 		songRepo.save(backseat);
 		funeral.addSong(backseat);
-		
+
 		Song satellite = new Song("Satellite Skin", "https://youtu.be/z66_AKHYaAA", "3:59", noOnesFirst);
 		songRepo.save(satellite);
 		noOnesFirst.addSong(satellite);
-		
+
 		Song guilty = new Song("Guilty Cocker Spaniel", "https://youtu.be/igXIB2ArH8c", "3:24", noOnesFirst);
 		songRepo.save(guilty);
 		noOnesFirst.addSong(guilty);
-		
+
 		Song autumn = new Song("Autumn Beds", "https://youtu.be/3g_WWoIePns", "3:59", noOnesFirst);
 		songRepo.save(autumn);
 		noOnesFirst.addSong(autumn);
-		
+
 		Song whale = new Song("The Whale Song", "https://youtu.be/8aQ8D9Iawo8", "3:59", noOnesFirst);
 		songRepo.save(whale);
 		noOnesFirst.addSong(whale);
-		
+
 		Song perpetual = new Song("Perpetual Motion Machine", "https://youtu.be/ctOBuaDnqJI", "3:15", noOnesFirst);
 		songRepo.save(perpetual);
 		noOnesFirst.addSong(perpetual);
-		
+
 		Song history = new Song("History Sticks to Your Feet", "https://youtu.be/1Pt572F7lZA", "3:55", noOnesFirst);
 		songRepo.save(history);
 		noOnesFirst.addSong(history);
-		
+
 		Song rat = new Song("King Rat", "https://youtu.be/WYDiLJPJ24g", "5:31", noOnesFirst);
 		songRepo.save(rat);
 		noOnesFirst.addSong(rat);
-		
+
 		Song iveGot = new Song("I've Got it All", "https://youtu.be/1hvOpUoE_CY", "3:11", noOnesFirst);
 		songRepo.save(iveGot);
 		noOnesFirst.addSong(iveGot);
-		
+
 		Song wedding = new Song("Wedding Bell", "https://youtu.be/udVTZsn1EqA", "3:55", devotion);
 		songRepo.save(wedding);
 		devotion.addSong(wedding);
-		
+
 		Song youCameToMe = new Song("You came to Me", "https://youtu.be/m8n5YXzeoyU", "4:06", devotion);
 		songRepo.save(youCameToMe);
 		devotion.addSong(youCameToMe);
-		
+
 		Song gila = new Song("Gila", "https://youtu.be/96pKsDnDgOw", "3:59", devotion);
 		songRepo.save(gila);
 		devotion.addSong(gila);
-		
+
 		Song turtle = new Song("Turtle Island", "https://youtu.be/opFxXgZzuIk", "3:59", devotion);
 		songRepo.save(turtle);
 		devotion.addSong(turtle);
-		
+
 		Song holy = new Song("Holy Dances", "https://youtu.be/XZLNxr1CbaI", "3:15", devotion);
 		songRepo.save(holy);
 		devotion.addSong(holy);
-		
+
 		Song years = new Song("All the Years", "https://youtu.be/gysrIvVLwhE", "3:55", devotion);
 		songRepo.save(years);
 		devotion.addSong(years);
-		
+
 		Song heart = new Song("Heart of Chambers", "https://youtu.be/KzF8n5kKKGE", "5:31", devotion);
 		songRepo.save(heart);
 		devotion.addSong(heart);
-		
+
 		Song astronaut = new Song("Astronaut", "https://youtu.be/cFvI29B8VFY", "3:11", devotion);
 		songRepo.save(astronaut);
 		devotion.addSong(astronaut);
-		
+
 		Song prologue = new Song("Prologue", "https://youtu.be/rXmNfqIR4z0", "2:36", hospice);
 		songRepo.save(prologue);
 		hospice.addSong(prologue);
-		
+
 		Song kettering = new Song("Kettering", "https://youtu.be/8We0FVflGaU", "5:14", hospice);
 		songRepo.save(kettering);
 		hospice.addSong(kettering);
-		
+
 		Song sylvia = new Song("Sylvia", "https://youtu.be/egsSN31uAFk", "5:30", hospice);
 		songRepo.save(sylvia);
 		hospice.addSong(sylvia);
-		
+
 		Song atrophy = new Song("Atrophy", "https://youtu.be/8goKJebNlGk", "7:38", hospice);
 		songRepo.save(atrophy);
 		hospice.addSong(atrophy);
-		
+
 		Song bear = new Song("Bear", "https://youtu.be/N_ox_QcxP7E", "3:10", hospice);
 		songRepo.save(bear);
 		hospice.addSong(bear);
-		
+
 		Song thirteen = new Song("Thirteen", "https://youtu.be/HQ1G4VPEL5k", "6:04", hospice);
 		songRepo.save(thirteen);
 		hospice.addSong(thirteen);
-		
+
 		Song two = new Song("Two", "https://youtu.be/i-BFLjyIb04", "3:48", hospice);
 		songRepo.save(two);
 		hospice.addSong(two);
-		
+
 		Song shiva = new Song("Shiva", "https://youtu.be/mF2Y-BnqGys", "8:38", hospice);
 		songRepo.save(shiva);
 		hospice.addSong(shiva);
-		
+
 		Song wake = new Song("Wake", "https://youtu.be/7fpI2PPRAM4", "5:12", hospice);
 		songRepo.save(wake);
 		hospice.addSong(wake);
-		
+
 		Song epilogue = new Song("Epilogue", "https://youtu.be/bQwkbRVqqxU", "1:12", hospice);
 		songRepo.save(epilogue);
 		hospice.addSong(epilogue);
-			
-	}
+		}
+
+	private void populateCharlesEntities()
+		{
+		Album album = null;
+		Artist brokenBells = new Artist("Broken Bells", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Brokenbells060810.jpg/220px-Brokenbells060810.jpg");
+		artistRepo.save(brokenBells);
+
+		Album broken = new Album("Broken Bells", "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Broken_Bells_Cover.jpg/220px-Broken_Bells_Cover.jpg", brokenBells, 2010);
+		album = broken;
+		albumRepo.save(album);
+		songRepo.save(new Song("The High Road", "https://www.youtube.com/watch?v=gWBG1j_flrg&list=OLAK5uy_l16smpVJabFnSYq6K43bP78jNTctiwNkk&index=2&t=0s", "3:52", album));
+		songRepo.save(new Song("Vaporize", "https://www.youtube.com/watch?v=RvcXCe2cml8&list=OLAK5uy_l16smpVJabFnSYq6K43bP78jNTctiwNkk&index=3&t=0s", "3:30", album));
+		songRepo.save(new Song("Your Head Is on Fire", "https://www.youtube.com/watch?v=sTmkrslAKxU", "3:04", album));
+		songRepo.save(new Song("The Ghost Inside", "https://www.youtube.com/watch?v=rVxTsXRjNTw&list=OLAK5uy_l16smpVJabFnSYq6K43bP78jNTctiwNkk&index=5&t=0s", "3:19", album));
+		songRepo.save(new Song("Sailing to Nowhere", "https://www.youtube.com/watch?v=LM_B2oswPuE&list=OLAK5uy_l16smpVJabFnSYq6K43bP78jNTctiwNkk&index=6&t=0s", "3:46", album));
+		songRepo.save(new Song("Trap Doors", "https://www.youtube.com/watch?v=92bZjceB-Wk&list=OLAK5uy_l16smpVJabFnSYq6K43bP78jNTctiwNkk&index=7&t=0s", "3:19", album));
+		songRepo.save(new Song("Citizen", "https://www.youtube.com/watch?v=8XZMhAGvlYQ&list=PLK_nFtMRoYSnKvOjwNkIwHUN9Y2isGeY-&index=7", "4:29", album));
+		songRepo.save(new Song("October", "https://www.youtube.com/watch?v=nAyZRszhqa0&list=PLK_nFtMRoYSnKvOjwNkIwHUN9Y2isGeY-&index=8", "3:40", album));
+		songRepo.save(new Song("Mongrel Heart", "https://www.youtube.com/watch?v=uGKGqUJ97VE&list=OLAK5uy_l16smpVJabFnSYq6K43bP78jNTctiwNkk&index=10&t=0s", "4:24", album));
+		songRepo.save(new Song("The Mall & Misery", "https://www.youtube.com/watch?v=fPc0ivhgTmI&list=PLK_nFtMRoYSnKvOjwNkIwHUN9Y2isGeY-&index=10", "4:07", album));
+
+		Album afterDisco = new Album("After The Disco", "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/After_The_Disco_Cover.jpg/220px-After_The_Disco_Cover.jpg", brokenBells, 2014);
+		album = afterDisco;
+		albumRepo.save(album);
+		songRepo.save(new Song("Perfect World", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "6:24", album));
+		songRepo.save(new Song("After the Disco", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:39", album));
+		songRepo.save(new Song("Holding On for Life", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:56", album));
+		songRepo.save(new Song("Leave It Alone", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:56", album));
+		songRepo.save(new Song("The Changing Lights", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:48", album));
+		songRepo.save(new Song("Control", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:41", album));
+		songRepo.save(new Song("Lazy Wonderland", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:21", album));
+		songRepo.save(new Song("Medicine", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:28", album));
+		songRepo.save(new Song("No Matter What You're Told", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:50", album));
+		songRepo.save(new Song("The Angel and the Fool", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "3:15", album));
+		songRepo.save(new Song("The Remains of Rock and Roll", "https://www.youtube.com/watch?v=GJu8aPEq0KA&list=OLAK5uy_lnEH1hPB_u1IxDZmKUBi_2SgUwHrzKzuY", "4:54", album));
+
+		Artist steelyDan = new Artist("Steely Dan", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Becker_%26_Fagen_of_Steely_Dan_at_Pori_Jazz_2007.jpg/250px-Becker_%26_Fagen_of_Steely_Dan_at_Pori_Jazz_2007.jpg");
+		artistRepo.save(steelyDan);
+		Album royalScam = new Album("The Royal Scam", "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/The_Royal_Scam_album_cover.jpg/220px-The_Royal_Scam_album_cover.jpg", steelyDan, 1976);
+		album = royalScam;
+		albumRepo.save(album);
+		songRepo.save(new Song("Kid Charlemagne", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "4:38", album));
+		songRepo.save(new Song("The Caves of Altamira", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "3:34", album));
+		songRepo.save(new Song("Don't Take Me Alive", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "4:16", album));
+		songRepo.save(new Song("Sign In Stranger", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "4:23", album));
+		songRepo.save(new Song("The Fez", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "4:01", album));
+		songRepo.save(new Song("Green Earrings", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "4:05", album));
+		songRepo.save(new Song("Haitian Divorce", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "5:53", album));
+		songRepo.save(new Song("Everything You Did", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "3:55", album));
+		songRepo.save(new Song("The Royal Scam", "https://www.youtube.com/watch?v=pCN0ApsheTU&list=PLz6cAheObZchC92q5yzBmkW8IYIrx-7nz", "6:28", album));
+
+		Artist pinkFloyd = new Artist("Pink Floyd", "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Pink_Floyd_-_all_members.jpg/250px-Pink_Floyd_-_all_members.jpg");
+		artistRepo.save(pinkFloyd);
+		Album darkSide = new Album("The Dark Side of the Moon", "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Dark_Side_of_the_Moon.png/220px-Dark_Side_of_the_Moon.png", pinkFloyd, 1973);
+		album = darkSide;
+		albumRepo.save(album);
+		songRepo.save(new Song("Speak to Me", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "1:13", album));
+		songRepo.save(new Song("Breathe", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "2:43", album));
+		songRepo.save(new Song("On the Run", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "3:36", album));
+		songRepo.save(new Song("Time", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "6:53", album));
+		songRepo.save(new Song("The Great Gig in the Sky", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "4:36", album));
+		songRepo.save(new Song("Money", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "6:23", album));
+		songRepo.save(new Song("Us and Them", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "7:49", album));
+		songRepo.save(new Song("Any Colour You Like", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "3:26", album));
+		songRepo.save(new Song("Brain Damage", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "3:49", album));
+		songRepo.save(new Song("Eclipse", "https://www.youtube.com/watch?v=xHx2lR2ICUU", "2:03", album));
+
+		}
+
 }
