@@ -45,7 +45,7 @@ public class Initializer implements CommandLineRunner {
 		songRepo.save(sheik1);
 		Song sheik2 = new Song("Flakes", "https://www.youtube.com/embed/AgyeUHH_V0g", "6:48", sheik);
 		songRepo.save(sheik2);
-		Song sheik3 = new Song("Broken hearts are for ARSEHOLES", "https://www.youtube.com/embed/xE5iI0QM6qY", "3:43", sheik);
+		Song sheik3 = new Song("Broken hearts are for Assholes", "https://www.youtube.com/embed/xE5iI0QM6qY", "3:43", sheik);
 		songRepo.save(sheik3);
 		Song sheik4 = new Song("I'm So Cute", "https://www.youtube.com/embed/D9sIKDt7Fso", "4:24", sheik);
 		songRepo.save(sheik4);
