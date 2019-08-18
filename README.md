@@ -1,4 +1,4 @@
-# stonkify-backend
+# Stonkify (Back-end)
 Back-end API for the amazing Stonkify website!
 
 ## The front-end repository is located <a href="https://github.com/charles-m-doan/stonkify-frontend">here</a>.
